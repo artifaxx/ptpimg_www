@@ -35,6 +35,8 @@ function checkUrl($URL,$Unique='') {
 	}
 }
 // Generate temporary file name
+// return('/tmp/4fc67f66cb923');
+// return('/tmp/4fc67f79054ab5.12316813');
 function tmpName() {
 	// Need more entropy? Use this, instead:
 	//return TMP_PREFIX.uniqid('', true);
@@ -43,6 +45,7 @@ function tmpName() {
 
 
 // getData (fileName, gen md5 hash)
+// return(ext, res, type, md5, size);
 function getData($f,$nomd5=false) {
 	$ext=''; $res=''; $Type=0; $Md5=''; $size=0;
 	if(!$nomd5) 

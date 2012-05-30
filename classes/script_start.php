@@ -19,8 +19,8 @@ define('EMAIL_REGEX','[_a-z0-9-]+([.+][_a-z0-9-]+)*@'.DOMAIN_REGEX);
 define('IMAGE_REGEX', URL_REGEX.'\/\S+\.(jpg|jpeg|tif|tiff|png|gif|bmp)(\?\S*)?');
 
 // Dev server:
-//define('IMG_DIR', '/mnt/ptpimg'); // nfs share @ 192.168.0.23
-define('IMG_DIR', '/mnt/ptpimg/v2'); // nfs share @ 192.168.0.23
+//define('IMG_DIR', '/mnt/ptpimg'); // nfs share @ 192.168.0.71 [37.59.147.3]
+define('IMG_DIR', '/mnt/ptpimg/v2'); // nfs share @ 192.168.0.71 [37.59.147.3]
 define('TMP_DIR', '/tmp'); // we don't use a ramdisk on the dev server
 // Live server:
 //define('IMG_DIR', '/home/ptpimg/public_html/raw'); // Raw image dir
@@ -61,7 +61,7 @@ function throw_error($c, $Sneaky=false) {
 	echo $c;
 	if($Sneaky) {
 		global $DB, $Cache;
-		print_r($DB);
+		print_r($DB->Queries);
 		print_r($Cache);
 	}
 }
